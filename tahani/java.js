@@ -14,7 +14,7 @@ const filterCards = (e) =>{
         if (card.dataset.name === e.target.dataset.name || e.target.dataset.name === "alle"){
         card.classList.remove("hide");
         }
-    })
+    });
 };
 
 filterButtons.forEach(button => button.addEventListener("click", filterCards));
@@ -26,15 +26,11 @@ const images = document.querySelectorAll('.card img');
 const imageSources = [];
 
 // gennemgå alle fundne billeder og tilføj deres src til arrayet
-images.forEach((imag) => {
-    imageSources.push(images.src);
+images.forEach((image) => {
+    imageSources.push(image.src);
 });
 
 // log imagesources array til konsollen for at verficere indholdet
 console.log(imageSources);
-
-
-
-
 
 console.log(filterButtons, filterableCards);

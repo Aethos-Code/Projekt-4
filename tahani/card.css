@@ -1,42 +1,30 @@
-header{
-    text-align: left; 
-    padding: 50px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "ITC", Avant Garde Gothic Pro;
 }
-header h1{
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-header p{
-    font-size: 18px;
-    max-width: 600px;
-    margin-bottom: 30px;
-}
-header button{
-    background-color: #662384;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
+
 body{
     min-height: 100vh;
-    background: #fafaf2;
+    background: #e7f2fd;
 }
+
 .container{
     position: relative;
     max-width: 1350px;
     width: 100%;
     padding: 20px;
-    margin: 50px;
+    margin: 50px auto;
 }
+
 .filter_buttons{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 10px; 
 }
+
 button{
     padding: 10px 20px;
     font-size: 18px;
@@ -46,16 +34,19 @@ button{
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
+
 button.active{
     background: #662384;
-    color: #fff;
+    color: #662384;
 }
+
 .filterable_cards{
     display: flex;
     margin-top: 25px;
     gap: 20px;
     flex-wrap: wrap;
 }
+
 .card{
     flex-grow: 1;
     flex-basis: 300px;
@@ -64,25 +55,29 @@ button.active{
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
-.card.hide{
+
+.crad.hide{
     display: none;
 }
+
 .card img{
-    width: 100%;
+    width: 100px;
     height: 210px;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
 }
 
-.card_body{
-    padding: 15px 20px 20px;
+.crad_body{
+    padding: 15px 20px 20px; 
 }
+
 .card_title{
     font-size: 20px;
-    font-weight: 500;
-    color: #662384;
+    font-weight: 500px;
+    color: #333;
 }
+
 .card_text{
     font-size: 18px;
-    color: #662384;
+    color: #333;
 }

@@ -1,6 +1,8 @@
+// vælg alle filter buttons og filterable cards
 const filterButtons = document.querySelectorAll(".filter_buttons button");
 const filterableCards = document.querySelectorAll(".filterable_cards .card");
 
+// definere filtercard funktion
 const filterCards = (e) =>{
     document.querySelector(".active").classList.remove("active");
     e.target.classList.add("active");

@@ -1,4 +1,3 @@
-/* const openModal = document.getElementById('kochsgade'); */
 const closeModal = document.getElementById('overlay');
 const modal = document.getElementById('modal');
 const modalH = document.querySelector('.modal-header');

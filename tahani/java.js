@@ -1,10 +1,11 @@
 // vælg alle filter buttons og filterable cards
 const filterButtons = document.querySelectorAll(".filter_buttons button");
 const filterableCards = document.querySelectorAll(".filterable_cards .card");
+const pointsInfo = document.getElementById("pointsInfo");
 
 // definere filtercard funktion
 const filterCards = (e) =>{
-    document.querySelector(".active").classList.remove("active");
+    document.querySelector(".active").classList.remove("active"); // dom metode
     e.target.classList.add("active");
     console.log(e.target);
 
@@ -15,6 +16,12 @@ const filterCards = (e) =>{
         card.classList.remove("hide");
         }
     });
+
+    if (e.target.dataset.name === "rabatter") {
+        pointsInfo.classList.remove("hide");
+    } else {
+        pointsInfo.classList.add("hide");
+    }
 };
 
 filterButtons.forEach(button => button.addEventListener("click", filterCards));

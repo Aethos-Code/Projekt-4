@@ -23,6 +23,7 @@ header button{
 body{
     min-height: 100vh;
     background: #fafaf2;
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
 }
 .container{
     position: relative;
@@ -96,4 +97,29 @@ button.active{
 .card_text{
     font-size: 16px;
     color: #333;
+}
+
+.points-info{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fafaf2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+}
+
+.points-info h3{
+    color: #662384;
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.points-info p{
+    font-size: 14px;
+    margin: 0;
+}
+
+.points-info.hide{
+    display: none;
 }

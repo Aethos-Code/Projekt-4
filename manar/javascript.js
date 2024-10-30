@@ -1,8 +1,15 @@
+const isValidEmail = email => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
 const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
+const inputs = [
+    { element: document.getElementById('username'), errorMessage: 'Brugernavn er påkrævet' },
+    { element: document.getElementById('email'), errorMessage: 'Email er påkrævet', validate: isValidEmail, invalidMessage: 'Angiv en gyldig email adresse' },
+    { element: document.getElementById('password'), errorMessage: 'Adgangskode er påkrævet', minLength: 8, lengthMessage: 'Adgangskoden skal bestå af mindst 8 bogstaver' },
+    { element: document.getElementById('password2'), errorMessage: 'Bekræft venligst din adgangskode', matchElement: document.getElementById('password'), mismatchMessage: 'Adgangskoden matcher ikke' }
+];
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -27,45 +34,21 @@ const setSuccess = element => {
     inputControl.classList.remove('error');
 };
 
-const isValidEmail = email => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
 
 const validateInputs = () => {
-    const usernameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-    const password2Value = password2.value.trim();
+    inputs.forEach(input => {
+        const value = input.element.value.trim();
 
-    if(usernameValue === '') {
-        setError(username, 'Brugernavn er påkrævet');
-    } else {
-        setSuccess(username);
-    }
-
-    if(emailValue === '') {
-        setError(email, 'Email er påkrævet'); 
-    } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Angiv en gyldig email adresse');
-    } else {
-        setSuccess(email);
-    }
-
-    if(passwordValue === '') {
-        setError(password, 'Adgangskode er påkrævet');
-    } else if (passwordValue.length < 8 ) {
-        setError(password, 'Adgangskoden skal bestå af mindst 8 bogstaver') 
-    } else {
-        setSuccess(password);
-    }
-
-    if(password2Value === '') {
-        setError(password2, 'Bekræft venligst din adgangskode');
-    } else if (password2Value !== passwordValue) {
-        setError(password2, "Adgangskoden matcher ikke");
-    } else {
-        setSuccess(password2);
-    }
-    
+        if (value === '') {
+            setError(input.element, input.errorMessage);
+        } else if (input.minLength && value.length < input.minLength) {
+            setError(input.element, input.lengthMessage);
+        } else if (input.validate && !input.validate(value)) {
+            setError(input.element, input.invalidMessage);
+        } else if (input.matchElement && value !== input.matchElement.value) {
+            setError(input.element, input.mismatchMessage);
+        } else {
+            setSuccess(input.element);
+        }
+    });
 };

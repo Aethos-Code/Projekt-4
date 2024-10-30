@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  background-color: #2d3133;
+  font-family: "itc-avant-garde-gothic-pro", sans-serif;
+}
+
+
+
+
+.img-con img {
+  --s: 250px;   /* the size of the image */
+  --b: 8px;     /* the border thickness*/
+  --g: 0px;    /* the gap */
+  --c: #8747B9; /* the color */
+  
+  width: var(--s);
+  aspect-ratio: 1;
+  outline: calc(var(--s)/2) solid #0009;
+  outline-offset: calc(var(--s)/-2);
+  cursor: pointer;
+  transition: .3s;
+}
+.img-con img:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+}
+
+.img-con img + img {
+  border-radius: 50%;
+}
+
+
+
+.img-con img:hover ~ .titlecard {
+  opacity: 0%;
+  scale: 1.5;
+}
+
+
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5cm;
+
+}
+
+.img-con {
+  width: 250px;
+  height: 350px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-con img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.titlecard {
+  color: white;
+  position: absolute;
+  text-align: center;
+  transition: 0.3s;
+}
+
+
+
+
+.modal {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+
+  z-index: 3000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  padding: 5rem;
+  width: 25vw;
+  height: 25vw;
+  background-color: #fafaf2;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: all 1s ease-in-out;
+}
+
+
+
+.modal-header {
+  align-self: center;
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.modal-hours {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.modal-hours p {
+  margin: 10px;
+  font-size: 0.8vw;
+}
+
+.modal-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-address img {
+  width: 75%;
+  object-fit: cover;
+}
+
+
+
+.overlay {
+  top: 0;
+  left: 0;
+  display: none;
+  position: fixed;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  opacity: 0.5;
+}

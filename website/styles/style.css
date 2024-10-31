@@ -85,6 +85,7 @@ header #logo {
   font-weight: bold;
   margin-top: 10vh;
   transition: 0.3s;
+  z-index: 50;
 }
 
 
@@ -214,7 +215,7 @@ header #logo {
 
 .modal-header {
   align-self: center;
-  font-size: 1vw;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -232,7 +233,7 @@ header #logo {
 
 .modal-hours p {
   margin: 10px;
-  font-size: 0.8vw;
+  font-size: 75%;
 }
 
 .modal-address {
@@ -309,8 +310,12 @@ header #logo {
 
 
 @media (max-width: 1300px) {
+  header #logo {
+    display: none;
+  }
+
   .wrap {
-    display: none
+    display: none;
   }
 
   .wrapper {
@@ -327,7 +332,8 @@ header #logo {
 
   .hero {
     position: static;
-  }
+    height: 65vh;
+  } 
 
  
 
@@ -341,14 +347,20 @@ header #logo {
     height: 50vh;
     width: 50vw;
   }
+
+  .modal-hours {
+    font-size: 75%;
+  }
+
+  .modal-address img {
+    display: none
+  }
 };
 
 
 @media (max-width: 600px) {
   header #logo {
     display: none;
-    width: 0px;
-    height: 0px;
   }
   header {
     width: calc(100% - 200px);
@@ -369,6 +381,7 @@ header #logo {
 
   .hero {
     position: static;
+    height: 65vh;
   }
 
  

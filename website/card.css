@@ -15,6 +15,16 @@ header {
     .cls-3{fill:#1e1e1c;}
     .cls-4{fill:#ffffff;}
   }
+
+
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   
   .menu {
     width: 10vw;
@@ -45,16 +55,20 @@ body{
     background: #fafaf2;
     font-family: "itc-avant-garde-gothic-pro", sans-serif;
 }
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
 .container{
     position: relative;
-    max-width: 1350px;
-    width: 100%;
-    padding: 20px;
-    margin: 50px;
+    width: 90vw;
+    margin-top: 10vh;
 }
+
 .filter_buttons{
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
 }
@@ -74,6 +88,7 @@ button.active{
 }
 .filterable_cards{
     display: flex;
+    justify-content: center;
     margin-top: 25px;
     gap: 10px;
     flex-wrap: wrap;

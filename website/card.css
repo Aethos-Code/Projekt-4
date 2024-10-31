@@ -1,5 +1,7 @@
 header {
+    top: 0;
     display: flex;
+    position: sticky;
     justify-content: space-between;
     padding: 50px 100px 50px 100px;
     z-index: 100;
@@ -27,10 +29,9 @@ header {
 
   
   .menu {
-    width: 10vw;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    column-gap: 25px;
   }
   
   .menu a {
@@ -162,4 +163,74 @@ button.active{
 
 .points-info.hide{
     display: none;
+}
+
+.menu-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-wrapper svg {
+    fill: black;
+    display: none;
+}
+
+#menu-open {
+    display: none;
+    position: absolute;
+    margin: 25px 25px 0 0;
+}
+
+#menu-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    fill: black;
+}
+
+
+.overlay {
+    top: 0;
+    left: 0;
+    display: none;
+    position: fixed;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    opacity: 0.5;
+  }
+
+
+.burgerMenu {
+    position: fixed;
+    background-color: #ffffff;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    padding: 100px 0px 0px 50px;
+    z-index: 1001;
+    transform: translate(150%, 0);
+    transition: 0.3s ease-in-out;
+}
+
+.burgerMenu a {
+    text-decoration: none;
+    color: #8747B9;
+    font-weight: 1000;
+}
+
+
+
+@media (max-width: 600px) {
+    header {
+        display: none;
+    }
+    #menu-open {
+        display: block;
+    }
+
 }

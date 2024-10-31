@@ -1,9 +1,9 @@
-const closeModal = document.getElementById('overlay');
+const closeModal = document.getElementById('overlayModal');
 const modal = document.getElementById('modal');
 const modalH = document.querySelector('.modal-header');
 const modalA = document.querySelector('.modal-address');
 
-const overlay = document.getElementById('overlay');
+const overlayModal = document.getElementById('overlayModal');
 const body = document.getElementById('body')
 
 
@@ -51,7 +51,7 @@ albanigade.addEventListener('click', () => {
   modalA.appendChild(img);
   modalA.appendChild(ad);
   hours();
-  overlay.style.display = "block";
+  overlayModal.style.display = "block";
 }); 
 
 kochsgade.addEventListener('click', () => {
@@ -63,7 +63,7 @@ kochsgade.addEventListener('click', () => {
   modalA.appendChild(img);
   modalA.appendChild(ad);
   hours();
-  overlay.style.display = "block";
+  overlayModal.style.display = "block";
 }); 
 
 dalumvej.addEventListener('click', () => {
@@ -75,7 +75,7 @@ dalumvej.addEventListener('click', () => {
   modalA.appendChild(img);
   modalA.appendChild(ad);
   hours();
-  overlay.style.display = "block";
+  overlayModal.style.display = "block";
 }); 
 
 
@@ -88,6 +88,6 @@ closeModal.addEventListener('click', () => {
   modalH.replaceChildren();
   mHours.replaceChildren();
   modal.style.display = "none";
-  overlay.style.display = "none";
+  overlayModal.style.display = "none";
 
 });

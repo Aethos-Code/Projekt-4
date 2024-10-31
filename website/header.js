@@ -9,11 +9,3 @@ function scrollFunction() {
   }
 }
 
-
-console.log("js kode kører sku' fint broski");
-
-const btn = document.getElementById("cta");
-
-btn.addEventListener('click', () => {
-  console.log("CLICK!");
-}); 

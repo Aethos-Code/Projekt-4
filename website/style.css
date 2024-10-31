@@ -33,10 +33,10 @@ header #logo {
 }
 
 .menu {
-  width: 10vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  column-gap: 25px;
 }
 
 .menu a {
@@ -85,7 +85,6 @@ header #logo {
   font-weight: bold;
   margin-top: 10vh;
   transition: 0.3s;
-  z-index: 100;
 }
 
 
@@ -136,11 +135,12 @@ header #logo {
 }
 
 .location-section {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .find {
@@ -149,7 +149,6 @@ header #logo {
 }
 
 .container {
- 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,17 +248,20 @@ header #logo {
 
 
 
-.overlay {
+.overlayModal {
   top: 0;
   left: 0;
   display: none;
   position: fixed;
   background-color: black;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
   opacity: 0.5;
 }
+
+
+
 
 
 
@@ -297,12 +299,6 @@ header #logo {
 
 
 
-
-
-
-
-
-
 .footer {
   background-color: #b2b2e6;
   width: 100%;
@@ -312,7 +308,88 @@ header #logo {
 
 
 
+@media (max-width: 1300px) {
+  .wrap {
+    display: none
+  }
 
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-wrap: wrap;
+    margin: 50px 20px 20px 0px;
+   
+  }
+
+
+  .hero {
+    position: static;
+  }
+
+ 
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    row-gap: 25px;
+  }
+
+  .modal {
+    height: 50vh;
+    width: 50vw;
+  }
+};
+
+
+@media (max-width: 600px) {
+  header #logo {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+  header {
+    width: calc(100% - 200px);
+    justify-content: center;
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-wrap: wrap;
+    margin: 50px 20px 20px 0px;
+   
+  }
+
+
+  .hero {
+    position: static;
+  }
+
+ 
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    row-gap: 25px;
+  }
+
+  .wrap {
+    display: none;
+  }
+
+
+  .modal {
+    height: 75vh;
+    width: 75vw;
+  }
+
+}
 
 
 
@@ -335,6 +412,6 @@ header #logo {
   background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
   box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
   border-radius: 100px;
-}
+};
 
 

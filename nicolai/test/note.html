@@ -4,3 +4,41 @@
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.35/build/spline-viewer.js"></script>
 <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/RBmzskASE3WzVhSj/scene.splinecode"></spline-viewer>
+
+
+
+
+
+
+
+
+
+
+
+<button id="åbnChatbot" class="åbn-chatbot-knap">Har du spørgsmål?</button>
+
+  <div id="chatbot" class="chatbot-container">
+      <div id="lukChatbot" class="luk-chatbot-knap">
+          <img src="img/close.png" alt="Luk Chatbot" width="20" height="20">
+      </div>
+
+      <h1>Chat med os</h1>
+      <p>👋 Hej, skriv gerne til os. Vi hjælper gerne!</p>
+
+      <h2>Ofte stillede spørgsmål</h2>
+
+      <div class="spørgsmål-bokse">
+
+      </div>
+
+      <div id="svar-boks" class="svar-boks">
+          <p id="svar-tekst"></p>
+          <button id="tilbage-knap" class="tilbage-knap" onclick="gåTilbageTilSpørgsmål()">Gå tilbage til spørgsmål</button>
+      </div>
+
+      <div class="bruger-input">
+          <input type="email" id="bruger-email" placeholder="Skriv din e-mail her..." />
+          <input type="text" id="bruger-spørgsmål" placeholder="Skriv dit spørgsmål her..." />
+          <button id="send-knap" onclick="håndterBrugerSpørgsmål()">Send</button>
+      </div>
+  </div>

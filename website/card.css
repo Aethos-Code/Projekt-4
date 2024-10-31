@@ -1,0 +1,150 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 100px 50px 100px;
+    z-index: 100;
+    background-color: #b2b2e6;
+    transition: 0.3s ease-in-out;
+  }
+
+
+  header #logo {
+    width: 10vw;
+    .cls-1{fill:#ffffff;}
+    .cls-2{fill:#8747B9;}
+    .cls-3{fill:#1e1e1c;}
+    .cls-4{fill:#ffffff;}
+  }
+  
+  .menu {
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .menu a:hover {
+    text-decoration: none;
+    scale: 1.1;
+    color: #550990;
+  }
+
+
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background: #fafaf2;
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+}
+.container{
+    position: relative;
+    max-width: 1350px;
+    width: 100%;
+    padding: 20px;
+    margin: 50px;
+}
+.filter_buttons{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+button{
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    color: #662384;
+}
+button.active{
+    background: #662384;
+    color: #fff;
+}
+.filterable_cards{
+    display: flex;
+    margin-top: 25px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.card{
+    flex-grow: 0;
+    width: 250px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition:  0.35s ease-in-out;
+}
+
+
+.card.hide{
+    display: none;
+}
+.card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    transition: 0.5s;
+}
+
+.card_body{
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card_title{
+    font-size: 20px;
+    font-weight: 500;
+    color: #662384;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+.card_text{
+    font-size: 16px;
+    color: #333;
+}
+
+.points-info{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fafaf2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+}
+
+.points-info h3{
+    color: #662384;
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.points-info p{
+    font-size: 14px;
+    margin: 0;
+}
+
+.points-info.hide{
+    display: none;
+}

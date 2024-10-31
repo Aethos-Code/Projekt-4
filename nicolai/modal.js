@@ -28,8 +28,6 @@ function hours() {
     const p = document.createElement('p')
     p.innerHTML = openingHours[i] + ": <br>" + "10:00 - 22:00";
     mHours.appendChild(p);
-  
-    console.log(openingHours[i]);
   }
 }
 
